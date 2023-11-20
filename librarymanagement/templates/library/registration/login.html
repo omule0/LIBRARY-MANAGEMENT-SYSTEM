@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://unpkg.com/@webpixels/css@1.2.6/dist/index.css" rel="stylesheet">
+    <title></title>
+  </head>
+  <body>
+    <form class=""  method="post">
+      {{form.as_p}}
+      {% csrf_token %}
+      <button type="submit" name="button">LOGIN</button>
+    </form>
+  </body>
+</html>
