@@ -5,8 +5,8 @@ from datetime import datetime,timedelta
 
 
 class StudentExtra(models.Model):
-    user=models.OneToOneField(User,on_delete=models.CASCADE)
-    enrollment = models.CharField(max_length=40)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    enrollment = models.DecimalField(max_digits=10, decimal_places=0, unique=True)
     branch = models.CharField(max_length=40)
     #used in issue book
     def __str__(self):
@@ -31,7 +31,6 @@ class Book(models.Model):
     isbn=models.PositiveIntegerField()
     author=models.CharField(max_length=40)
     category=models.CharField(max_length=30,choices=catchoice,default='education')
-    pdf=models.FileField(upload_to='media/',null=True,blank=True)
     def __str__(self):
         return str(self.name)+"["+str(self.isbn)+']'
 

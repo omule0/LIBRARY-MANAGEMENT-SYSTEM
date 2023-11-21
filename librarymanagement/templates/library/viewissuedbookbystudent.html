@@ -3,66 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <title></title>
-
-    <style media="screen">
-      table.redTable {
-        border: 2px solid #a40808;
-        background-color: #eee7db;
-        width: 100%;
-        text-align: center;
-        border-collapse: collapse;
-      }
-      table.redTable td,
-      table.redTable th {
-        border: 1px solid #aaaaaa;
-        padding: 3px 2px;
-      }
-      table.redTable tbody td {
-        font-size: 13px;
-      }
-      table.redTable tr:nth-child(even) {
-        background: #f5c8bf;
-      }
-      table.redTable thead {
-        background: #a40808;
-      }
-      table.redTable thead th {
-        font-size: 19px;
-        font-weight: bold;
-        color: #ffffff;
-        text-align: center;
-        border-left: 2px solid #a40808;
-      }
-      table.redTable thead th:first-child {
-        border-left: none;
-      }
-
-      table.redTable tfoot {
-        font-size: 13px;
-        font-weight: bold;
-        color: #ffffff;
-        background: #a40808;
-      }
-      table.redTable tfoot td {
-        font-size: 13px;
-      }
-      table.redTable tfoot .links {
-        text-align: right;
-      }
-      table.redTable tfoot .links a {
-        display: inline-block;
-        background: #ffffff;
-        color: #a40808;
-        padding: 2px 8px;
-        border-radius: 5px;
-      }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
   </head>
   <body>
     {% include "library/navbarstudent.html" %}<br /><br />
     <h3
       class="p-3 mb-2 bg-primary text-white"
-      style="font-size: 50px; text-align: center"
+      style="font-size: 25px; text-align: center"
     >
       Book Issued To You !
     </h3>
@@ -70,9 +18,9 @@
     <div class="row">
       <div class="col-lg-6" style="padding-right: 0px">
         {% if li1%}
-        <table class="redTable">
+        <table class="table">
           <thead>
-            <tr>
+            <tr class="table-dark">
               <th>Name</th>
               <th>Enrollment</th>
               <th>Branch</th>
@@ -80,13 +28,6 @@
               <th>Book Author</th>
             </tr>
           </thead>
-          <tfoot>
-            <tr>
-              <td colspan="5">
-                <div class="links"></div>
-              </td>
-            </tr>
-          </tfoot>
           <tbody>
             {% for t in li1 %}
             <tr>
@@ -103,21 +44,15 @@
       </div>
 
       <div class="col-lg-6" style="padding-left: 0px">
-        <table class="redTable">
+        <table class="table">
           <thead>
-            <tr>
+            <tr class="table-dark">
               <th>Issue Date</th>
               <th>Expiry Date</th>
               <th>Fine</th>
             </tr>
           </thead>
-          <tfoot>
-            <tr>
-              <td colspan="5">
-                <div class="links"></div>
-              </td>
-            </tr>
-          </tfoot>
+
           <tbody>
             {% for t in li2 %}
             <tr>
